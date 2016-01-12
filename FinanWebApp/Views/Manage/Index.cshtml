@@ -1,0 +1,16 @@
+﻿@model FinanWebApp.Models.IndexViewModel
+@{
+    ViewBag.Title = "Menú";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+
+@Html.Partial("_MenuPartial", Model.menusList)
+
+<div class="container" style="height: 300px;">
+
+</div>
+
+

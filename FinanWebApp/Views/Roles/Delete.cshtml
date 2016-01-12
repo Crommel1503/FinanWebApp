@@ -1,0 +1,32 @@
+﻿@model FinanWebApp.Models.ListRoleViewModel
+
+@{
+    ViewBag.Title = "Eliminar rol";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    @Html.ActionLink("Volver", "Index")
+    <hr />
+    <h3>¿Esta seguro de eliminar el Rol?</h3>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" />
+            
+        </div>
+    }
+</div>

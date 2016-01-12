@@ -1,0 +1,29 @@
+﻿@model List<FinanWebApp.Models.Menus>
+
+
+<div class="navbar-left" style="border-left-width: 1px">
+    <ul class="nav navbar-link">
+        @{
+            var pList = Model.Where(m => m.ParentId == 0).ToList().OrderBy(o => o.Name);
+
+            foreach (var item in pList)
+            {
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="@item.Title">@item.Name<b class="caret"></b></a>
+                    @{
+                        var cList = Model.Where(m => m.ParentId == item.Id).ToList().OrderBy(m => m.Name);
+                        if (cList != null && cList.Count() > 0)
+                        {
+                            <ul class="dropdown-menu">
+                                @foreach (var subItem in cList)
+                                {
+                                    <li>@Html.ActionLink(subItem.Name, subItem.ActionName, subItem.ControllerName, routeValues: null, htmlAttributes: new { title = subItem.Title })</li>
+                                }
+                            </ul>
+                        }
+                    }
+                </li>
+            }
+        }
+    </ul>
+</div>

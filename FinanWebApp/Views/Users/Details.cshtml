@@ -1,0 +1,96 @@
+﻿@model FinanWebApp.Models.ListUserViewModels
+
+@{
+    ViewBag.Title = "Detalles del usuario";
+    
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    <p>
+        @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) | 
+        @Html.ActionLink("Eliminar", "Delete", new { id = Model.Id }) | 
+        @Html.ActionLink("Volver", "Index")
+    </p>
+    <hr />
+    <h3>Datos de usuario</h3>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailConfirmed)
+        </dt>
+
+        <dd>
+            <img height="20" src="@Model.EmailConfirmedImg" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumberConfirmed)
+        </dt>
+
+        <dd>
+            <img height="20" src="@Model.PhoneNumberConfirmedImg"  />
+        </dd>
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.AccessFailedCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccessFailedCount)
+        </dd>
+    </dl>
+    <h3>Datos de sesión</h3>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AccessDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccessDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsOnLine)
+        </dt>
+
+        <dd>
+            <img height="20" src="@Model.IsOnLineImg" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IpAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IpAddress)
+        </dd>
+    </dl>
+    <h3>Datos de Generales</h3>
+    <dl class="dl-horizontal">
+    </dl>
+</div>
+
