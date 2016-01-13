@@ -139,7 +139,7 @@ namespace FinanWebApp.Controllers
                         return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = false });
                     case SignInStatus.Failure:
                     default:
-                        ModelState.AddModelError("", "Acceso invalido, intente de nuevo.");
+                        ModelState.AddModelError("", "Contraseña incorrecta, intente de nuevo.");
                         return View(model);
                 }
             }
